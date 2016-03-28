@@ -76,7 +76,7 @@
     <#if (string?length < length)>
         <#return string />
     <#else>
-        <#return string?substring(0, length-1) />
+        <#return string?substring(0, length) />
     </#if>
 </#function>
 
