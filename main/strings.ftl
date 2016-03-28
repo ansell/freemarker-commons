@@ -73,6 +73,9 @@
 </#function>
 
 <#function truncate string length>
+    <#if (length == 0)>
+        <#return "" />
+    </#if>
     <#if (string?length < length)>
         <#return string />
     </#if>
