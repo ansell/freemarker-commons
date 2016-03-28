@@ -58,6 +58,11 @@
 <@assert (strings.suffixTrim("abc \t") == "abc") "Suffix trimmed string with trimmable characters" />
 <@assert (strings.trim("abc") == "abc") "Trimmed string without trimmable characters" />
 <@assert (strings.trim(" \tabc \t") == "abc") "Trimmed string with trimmable characters" />
+<@assert (strings.truncate("", 10) == "") "Truncated empty string" />
+<@assert (strings.truncate("abc", 0) == "") "Truncated string with count of 0" />
+<@assert (strings.truncate("abc", 1) == "a") "Truncated string with count of 1" />
+<@assert (strings.truncate("abc", 3) == "abc") "Truncated string with same count as length" />
+<@assert (strings.truncate("abc", 10) == "abc") "Truncated string with count greater than length" />
 <@assert (strings.pluralized(1, "dog") == "1 dog") "Pluralized word with count of 1" />
 <@assert (strings.pluralized(0, "dog") == "0 dogs") "Pluralized word with count of 0" />
 <@assert (strings.pluralized(2, "dog") == "2 dogs") "Pluralized word with count of 2" />
