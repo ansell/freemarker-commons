@@ -72,6 +72,14 @@
     <#return prefixTrim(suffixTrim(string, chars), chars)>
 </#function>
 
+<#function truncate string length>
+    <#if (string?length < length)>
+        <#return string />
+    <#else>
+        <#return string?substring(0, length-1) />
+    </#if>
+</#function>
+
 <#function padded strings prefix="" suffix="">
     <#local result = [] />
     <#list c.toSequence(strings) as string>
